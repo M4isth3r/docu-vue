@@ -1,10 +1,17 @@
 <template>
-  <p>Mi primer componente con Vue</p>
+  <div class="content">
+    <p v-if="!condition">{{ miVariable }}</p>
+    <p v-else>Esta frase no se va a mostrar</p>
+  </div>
 </template>
 
 <script>
 export default {
   name: "MiComponente",
+  data: () => ({
+    miVariable: "Mi primer componente con Vue :)",
+    condition: false,
+  }),
 };
 </script>
 
