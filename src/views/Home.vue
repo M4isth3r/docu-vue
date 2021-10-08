@@ -1,9 +1,15 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <img
+      :class="myClass"
+      v-bind:alt="alternativeText"
+      src="../assets/logo.png"
+    />
     <HelloWorld msg="Bienvenido a la página de práctica" />
     <MiComponente />
+    <!-- 2 formas de llamar al componente -->
     <ComponentTable />
+    <component-table coleccion="coleccion"></component-table>
   </div>
 </template>
 
@@ -20,5 +26,14 @@ export default {
     MiComponente,
     ComponentTable,
   },
+  data: () => ({
+    coleccion: [
+      { name: "Hera", description: "la diosa del Olimpo" },
+      { name: "Hefesto", description: "el dios del fuego y de la metalurgia" },
+      { name: "Afrodita", description: "la diosa del amor y de la belleza" },
+    ],
+    alternativeText: "Vue logo",
+    myClass: "my-class",
+  }),
 };
 </script>

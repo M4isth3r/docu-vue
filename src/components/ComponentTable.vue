@@ -4,14 +4,15 @@
       <tr>
         <th>ID</th>
         <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Edad</th>
+        <th>Descripción</th>
       </tr>
-      <tr v-for="(item, i) in table" v-bind:key="i">
-        <td>{{ i + 1 }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.surname }}</td>
-        <td>{{ item.age }}</td>
+      <tr v-for="(cosa, i) in coleccion" v-bind:key="i">
+        <td>{{ i }}</td>
+        <td>{{ cosa.name }}</td>
+        <td>{{ cosa.description }}</td>
+        <span v-for="(child, j) in cosa.children" :key="j">
+          {{ child }}
+        </span>
       </tr>
     </table>
   </div>
@@ -21,10 +22,22 @@
 export default {
   name: "ComponentTable",
   data: () => ({
-    table: [
-      { name: "Yuriy", surname: "Mraka", age: 28 },
-      { name: "Esther", surname: "Morales", age: 26 },
-      { name: "Marta", surname: "Morales", age: 32 },
+    coleccion: [
+      {
+        name: "Zeus",
+        description: "Dios del Cielo y Soberano del Olimpo",
+        children: [1, 3, 4],
+      },
+      {
+        name: "Poseidón",
+        description: "Dios de los mares y océanos",
+        children: [1, 3, 4],
+      },
+      {
+        name: "Hades",
+        description: "Dios del inframundo",
+        children: [1, 3, 4],
+      },
     ],
   }),
 };
@@ -34,5 +47,8 @@ export default {
 <style scoped lang="scss">
 .table {
   margin: auto;
+}
+td {
+  text-align: left;
 }
 </style>
