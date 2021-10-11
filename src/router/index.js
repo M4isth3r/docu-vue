@@ -1,6 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+
+// Pages
 import Home from "../views/Home.vue";
+import TodoList from "../views/TodoList.vue";
 
 Vue.use(VueRouter);
 
@@ -18,6 +21,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+  {
+    path: "/todo-list",
+    name: "TodoList",
+    component: TodoList,
   },
 ];
 

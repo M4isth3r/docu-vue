@@ -3,7 +3,10 @@
     <div>{{ msg }}</div>
     <button @click="greet(componentName)">Saludar!</button>
     <div>
-      <p>Veces que has saludado: {{ greetNumber }} - Saludo * 2 = {{ doubleGreetNumber }}</p>
+      <p>
+        Veces que has saludado: {{ greetNumber }} - Saludo * 2 =
+        {{ doubleGreetNumber }}
+      </p>
     </div>
   </div>
 </template>
