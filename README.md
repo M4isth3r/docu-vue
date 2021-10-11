@@ -1,5 +1,13 @@
 # docu-vue
 
+## Install Vue cli vith npm
+```
+npm install -g @vue/cli
+```
+## Create new app with Vue cli
+```
+vue create <name-of-app>
+```
 ## Project setup
 ```
 npm install

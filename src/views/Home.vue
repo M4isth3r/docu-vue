@@ -5,7 +5,10 @@
       v-bind:alt="alternativeText"
       src="../assets/logo.png"
     />
-    <HelloWorld msg="Bienvenido a la página de práctica" />
+    <HelloWorld
+      msg="Bienvenido a la página de práctica"
+      componentName="HelloWorld"
+    />
     <MiComponente />
     <!-- 2 formas de llamar al componente -->
     <ComponentTable />

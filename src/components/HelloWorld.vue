@@ -1,6 +1,10 @@
 <template>
   <div>
     <div>{{ msg }}</div>
+    <button @click="greet(componentName)">Saludar!</button>
+    <div>
+      <p>Veces que has saludado: {{ greetNumber }} - Saludo * 2 = {{ doubleGreetNumber }}</p>
+    </div>
   </div>
 </template>
 
@@ -9,6 +13,29 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String,
+    componentName: String,
+  },
+  data: () => ({
+    text: String,
+    greetNumber: 0,
+  }),
+  // Las propiedades computadas tienen caché, es decir,
+  // utilizar propiedades computadas es más óptimo porque
+  // si Vue detecta que la computada va a devolver el mismo valor,
+  // no ejecutará la computada ahorrando cálculos.
+  computed: {
+    doubleGreetNumber() {
+      return this.greetNumber * 2;
+    },
+  },
+  methods: {
+    greet(name) {
+      console.log(`Hola mundo desde ${name}`);
+      this.count();
+    },
+    count() {
+      this.greetNumber++;
+    },
   },
 };
 </script>
