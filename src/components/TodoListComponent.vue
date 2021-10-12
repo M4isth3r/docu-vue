@@ -1,47 +1,49 @@
 <template>
   <div id="todo-list-componet">
-    <form class="form" @submit.prevent="createTask">
-      <label class="label" for="task">Nueva tarea: </label>
-      <input class="input" type="text" v-model="newTask" id="task" />
-      <input class="button" type="submit" value="Craer tarea" />
-    </form>
-
+    <todo-add-component @add-new-task="addNewTask"></todo-add-component>
     <div class="list">
       <ul>
-        <li
+        <todo-item-component
           class="task"
-          v-for="(task, i) in tasks"
-          :key="`task ${i}`"
-          :class="{completed: task.completed}"
-          @click="completeTask(task.text)"
-        >{{ task.text }}</li>
+          v-for="(task, index) in tasks"
+          :task="task"
+          :key="index"
+          :class="{ completed: task.completed }"
+          @click-on-task="completeTask"
+        >
+          {{ task.text }}
+        </todo-item-component>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
+import TodoItemComponent from "@/components/TodoItemComponent";
+import TodoAddComponent from "@/components/TodoAddComponent";
+
 export default {
+  components: {
+    TodoItemComponent,
+    TodoAddComponent,
+  },
   data: () => ({
     newTask: "",
-    tasks: [],
+    tasks: [{ text: "aprender vue", completed: false }],
   }),
   methods: {
-    createTask() {
-      let task = {
-        text: this.newTask,
-        completed: false,
-      };
+    addNewTask(task) {
       this.tasks.push(task);
-      this.newTask = "";
-      console.log(this.tasks);
     },
-    completeTask(taskText) {
-      let task = this.tasks.find((value) => value.text === taskText);
-      if (task !== undefined) {
-        task.completed = !task.completed;
+    completeTask(task) {
+      let taskFound = this.tasks.find((value) => value.text === task.text);
+      if (taskFound !== undefined) {
+        taskFound.completed = !taskFound.completed;
       }
-    }
+    },
+    print() {
+      console.log("Hola Mundo!");
+    },
   },
 };
 </script>
@@ -53,43 +55,14 @@ export default {
   padding: 0;
 }
 
-.form {
-  background: white;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0px 10px 22px -1px rgba(0,0,0,0.25);
-  margin-top: 10px;
-  width: 600px;
-  margin: auto;
-}
-
-input {
-  margin-right: 5px;
-}
-
-.input {
-  padding: 5px;
-}
-.button {
-  margin-left: 20px;
-  height: 35px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
-  background-color: #2ecc71;
-  color: black;
-  cursor: pointer;
-  padding: 5px;
-}
-
 .list {
   margin: auto;
   margin-top: 40px;
   padding: 30px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   border: none;
-  width: 600px;
+  width: 400px;
 }
 
 ul {
