@@ -4,6 +4,8 @@ import VueRouter from "vue-router";
 // Pages
 import Home from "../views/Home.vue";
 import TodoList from "../views/TodoList.vue";
+import PageNotFound from "@/views/PageNotFound.vue";
+import RouterDocu from "../views/RouterDocu.vue";
 
 Vue.use(VueRouter);
 
@@ -26,6 +28,16 @@ const routes = [
     path: "/todo-list",
     name: "TodoList",
     component: TodoList,
+  },
+  {
+    path: "/router-docu",
+    name: "RouterDocu",
+    component: RouterDocu,
+  },
+  {
+    path: "*",
+    component: PageNotFound,
+    alias: "404",
   },
 ];
 

@@ -1,5 +1,5 @@
 <template>
-  <div id="todo-list">
+  <div id="todo-list" class="container">
     <todo-list-component></todo-list-component>
   </div>
 </template>
