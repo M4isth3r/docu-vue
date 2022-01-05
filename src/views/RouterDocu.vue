@@ -51,9 +51,9 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 :root {
-  --color-link: #126ed1;
+  --color-link: #42b983;
 }
 
 * {

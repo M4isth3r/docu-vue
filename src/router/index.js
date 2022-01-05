@@ -6,6 +6,8 @@ import Home from "../views/Home.vue";
 import TodoList from "../views/TodoList.vue";
 import PageNotFound from "@/views/PageNotFound.vue";
 import RouterDocu from "../views/RouterDocu.vue";
+import PokeWiki from "../views/PokeWiki.vue";
+import PokeDetail from "../views/PokeDetail.vue";
 
 Vue.use(VueRouter);
 
@@ -33,6 +35,16 @@ const routes = [
     path: "/router-docu",
     name: "RouterDocu",
     component: RouterDocu,
+  },
+  {
+    path: "/poke-wiki",
+    name: "PokeWiki",
+    component: PokeWiki,
+  },
+  {
+    path: "/pokemon/:id",
+    name: "pokemon",
+    component: PokeDetail,
   },
   {
     path: "*",
