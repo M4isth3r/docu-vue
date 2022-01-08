@@ -39,7 +39,7 @@ export default {
   created() {
     console.log(this.$route.params);
     this.pokemonData = this.$route.params;
-    this.$route.params.types.forEach((pokemon) => {
+    this.pokemonData.types.forEach((pokemon) => {
       const pokemonInfo = {};
       const imgName = translateToSvg(pokemon.type.name);
       pokemonInfo.name = pokemon.type.name;

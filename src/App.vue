@@ -2,6 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
+      <router-link to="/hacker-news">HackerNews</router-link> |
       <router-link to="/todo-list">TodoList</router-link> |
       <router-link :to="{ name: 'RouterDocu' }">RouterDocu</router-link> |
       <router-link to="/poke-wiki">PokeWiki</router-link> |
@@ -19,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss">
-:root {
+:host {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -31,6 +32,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  font-size: 18px;
 }
 
 #nav {

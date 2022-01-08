@@ -5,14 +5,8 @@
       v-bind:alt="alternativeText"
       src="../assets/logo.png"
     />
-    <HelloWorld
-      msg="Bienvenido a la página de práctica"
-      componentName="HelloWorld"
-    />
+    <HelloWorld msg="Welcome to DocuVue" componentName="HelloWorld" />
     <MiComponente />
-    <!-- 2 formas de llamar al componente -->
-    <ComponentTable />
-    <component-table coleccion="coleccion"></component-table>
   </div>
 </template>
 
@@ -20,14 +14,12 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import MiComponente from "@/components/MiComponente.vue";
-import ComponentTable from "@/components/ComponentTable.vue";
 
 export default {
   name: "Home",
   components: {
     HelloWorld,
     MiComponente,
-    ComponentTable,
   },
   data: () => ({
     coleccion: [

@@ -52,15 +52,11 @@ export default {};
 </script>
 
 <style scoped>
-:root {
-  --color-link: #42b983;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 18px;
+  --color-link: #42b983;
 }
 
 .card {

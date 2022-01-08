@@ -1,6 +1,10 @@
 <template>
   <div class="content">
     <custom-spinner id="spinner"></custom-spinner>
+    <custom-searcher
+      @search-value="getData"
+      @recharge-data="getAllPokemons"
+    ></custom-searcher>
     <div class="group" v-show="!showSpinner">
       <div
         class="card"
@@ -17,20 +21,30 @@
 
 <script>
 import CustomSpinner from "./common/CustomSpinner.vue";
+import CustomSearcher from "../components/common/CustomSearcher.vue";
 
 export default {
   name: "PokeDex",
   components: {
     CustomSpinner,
+    CustomSearcher,
   },
   data: () => ({
     pokemons: [],
-    temporalPokemons: [],
+    persistPokemons: [],
     showSpinner: true,
   }),
   methods: {
     openPokemonDetail: function (pokemon) {
       this.$router.push({ name: "pokemon", params: pokemon });
+    },
+    getAllPokemons: function () {
+      this.pokemons = [].concat(this.persistPokemons);
+    },
+    getData: function (valueToSearch) {
+      this.pokemons = this.persistPokemons.filter((pokemon) =>
+        pokemon.species.name.includes(valueToSearch)
+      );
     },
   },
   created() {
@@ -41,7 +55,8 @@ export default {
           fetch(pokemon.url)
             .then((response) => response.json())
             .then((pokemonData) => {
-              this.pokemons.push(pokemonData);
+              this.persistPokemons.push(pokemonData);
+              this.pokemons = [].concat(this.persistPokemons);
               setTimeout(() => {
                 this.$el.querySelector("#spinner").classList.remove("show");
                 this.showSpinner = false;
@@ -50,6 +65,7 @@ export default {
         });
       });
   },
+  mounted() {},
 };
 </script>
 
@@ -66,5 +82,12 @@ img {
 
 .card {
   max-width: 25%;
+  transition-duration: 0.4s;
+}
+
+.card:hover {
+  background-color: rgb(250, 250, 250);
+  transform: scale(1.3);
+  z-index: 1;
 }
 </style>

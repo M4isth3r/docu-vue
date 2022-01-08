@@ -8,6 +8,7 @@ import PageNotFound from "@/views/PageNotFound.vue";
 import RouterDocu from "../views/RouterDocu.vue";
 import PokeWiki from "../views/PokeWiki.vue";
 import PokeDetail from "../views/PokeDetail.vue";
+import HackerNews from "../views/HackerNews.vue";
 
 Vue.use(VueRouter);
 
@@ -25,6 +26,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+  {
+    path: "/hacker-news",
+    name: "HackerNews",
+    component: HackerNews,
   },
   {
     path: "/todo-list",
