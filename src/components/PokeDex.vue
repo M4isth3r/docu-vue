@@ -57,15 +57,16 @@ export default {
             .then((pokemonData) => {
               this.persistPokemons.push(pokemonData);
               this.pokemons = [].concat(this.persistPokemons);
-              setTimeout(() => {
-                this.$el.querySelector("#spinner").classList.remove("show");
-                this.showSpinner = false;
-              }, 1000);
             });
         });
       });
   },
-  mounted() {},
+  updated() {
+    setTimeout(() => {
+      this.$el.querySelector("#spinner").classList.remove("show");
+      this.showSpinner = false;
+    }, 1000);
+  },
 };
 </script>
 

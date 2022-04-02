@@ -1,6 +1,7 @@
 <template>
   <div class="v-container">
-    <table class="">
+    <span v-if="hackerNewsData === 'error'">{{ hackerNewsData }}</span>
+    <table v-else class="">
       <thead>
         <tr>
           <th v-for="(column, index) in collection" :key="index">
@@ -9,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, index) in data" :key="index">
+        <tr v-for="(item, index) in hackerNewsData" :key="index">
           <td v-for="(column, index) in collection" :key="index">
             <a v-if="column.field === 'url'" :href="item.url" target="_blank">{{
               item.url
@@ -25,7 +26,7 @@
 <script>
 export default {
   name: "VDocuTable",
-  props: ["data"],
+  props: ["hackerNewsData"],
   data: () => ({
     collection: [
       { header: "Author", field: "author" },
