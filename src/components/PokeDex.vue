@@ -4,6 +4,7 @@
     <custom-searcher
       @search-value="getData"
       @recharge-data="getAllPokemons"
+      @submit-pressed="handleClick"
     ></custom-searcher>
     <div class="group" v-show="!showSpinner">
       <div
@@ -45,6 +46,9 @@ export default {
       this.pokemons = this.persistPokemons.filter((pokemon) =>
         pokemon.species.name.includes(valueToSearch)
       );
+    },
+    handleClick(detail) {
+      alert(`You have just searched ${detail}`);
     },
   },
   created() {

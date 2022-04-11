@@ -44,6 +44,37 @@
         Ejemplo: navegar al about
       </p>
     </div>
+
+    <div class="card border-light">
+      <h2>Props en el Vue Router</h2>
+      <p>Setear <strong>props</strong> a true en el array del router.</p>
+      <div class="code" v-highlight>
+        <pre class="language-javascript">
+          <code>
+      {
+        path: "/users",
+        name: "users",
+        component: Users
+        props: true
+      }
+      // ¡Solo funciona navegando por el name!
+      this.$router.push({ name: 'About', params: { title: 'OpenSource is the way!' }})"
+          </code>
+        </pre>
+      </div>
+      <p
+        class="navigation-button"
+        @click="
+          () =>
+            this.$router.push({
+              name: 'About',
+              params: { title: 'OpenSource is the way!' },
+            })
+        "
+      >
+        Ejemplo: navegar al about
+      </p>
+    </div>
   </div>
 </template>
 

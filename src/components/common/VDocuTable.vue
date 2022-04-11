@@ -26,7 +26,12 @@
 <script>
 export default {
   name: "VDocuTable",
-  props: ["hackerNewsData"],
+  props: {
+    hackerNewsData: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data: () => ({
     collection: [
       { header: "Author", field: "author" },

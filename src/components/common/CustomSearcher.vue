@@ -9,7 +9,9 @@
       />
     </div>
     <div class="nes-field">
-      <button class="nes-btn is-primary" type="submit">Submit</button>
+      <button class="nes-btn is-primary" type="submit" @click="fireEvent">
+        Submit
+      </button>
     </div>
     <div class="nes-field">
       <button class="nes-btn is-error" type="reset" @click="rechargeData">
@@ -38,6 +40,9 @@ export default {
     },
     rechargeData: function () {
       this.$emit("recharge-data");
+    },
+    fireEvent: function () {
+      this.$emit("submit-pressed", this.valueToSearch);
     },
   },
 };
