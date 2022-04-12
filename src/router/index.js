@@ -9,6 +9,8 @@ import PokeDetail from "../views/PokeDetail.vue";
 import PokeWiki from "../views/PokeWiki.vue";
 import RouterDocu from "../views/RouterDocu.vue";
 import TodoList from "../views/TodoList.vue";
+import VDocuLogin from "../views/VDocuLogin.vue";
+import VDocuRegister from "../views/VDocuRegister.vue";
 
 Vue.use(VueRouter);
 
@@ -17,6 +19,16 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: VDocuLogin
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: VDocuRegister
   },
   {
     path: "/about",
