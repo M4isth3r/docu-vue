@@ -19,6 +19,8 @@ const pokemonTypes = {
   water: "water_type_icon",
 };
 
-export const translateToSvg = (type) => {
+const translateToSvg = (type) => {
   return pokemonTypes[type];
 };
+
+export default translateToSvg;

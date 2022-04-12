@@ -1,5 +1,6 @@
 <template>
   <form id="custom-searcher" @submit.prevent="checkForm">
+    <slot></slot>
     <div class="nes-field">
       <input
         class="nes-input"

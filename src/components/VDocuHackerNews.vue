@@ -1,7 +1,9 @@
 <template>
   <div class="v-container">
     <custom-spinner id="spinner"></custom-spinner>
-    <custom-searcher></custom-searcher>
+    <custom-searcher>
+      <img :src="cactus.src" :alt="cactus.alt" />
+    </custom-searcher>
     <v-docu-table
       v-show="!isSpinnerVisible"
       v-bind:hackerNewsData="hackerNewsData"
@@ -13,6 +15,7 @@
 import VDocuTable from "../components/common/VDocuTable.vue";
 import CustomSpinner from "./common/CustomSpinner.vue";
 import CustomSearcher from "../components/common/CustomSearcher.vue";
+import cactus from "@/assets/cactus.svg";
 
 export default {
   name: "VDocuHackerNews",
@@ -29,6 +32,10 @@ export default {
     page: 0,
     hitsPerPage: 20,
     isSpinnerVisible: true,
+    cactus: {
+      src: cactus,
+      alt: "cactus",
+    },
   }),
   methods: {},
   created() {

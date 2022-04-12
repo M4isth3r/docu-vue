@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { translateToSvg } from "../utils/pokemon-types-dictionary.js";
+import translateToSvg from "@/components/utils/pokemon-types-dictionary.js";
 
 export default {
   name: "PokeDetail",

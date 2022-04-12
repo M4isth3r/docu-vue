@@ -2,13 +2,13 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 // Pages
-import Home from "../views/Home.vue";
-import TodoList from "../views/TodoList.vue";
-import PageNotFound from "@/views/PageNotFound.vue";
-import RouterDocu from "../views/RouterDocu.vue";
-import PokeWiki from "../views/PokeWiki.vue";
-import PokeDetail from "../views/PokeDetail.vue";
 import HackerNews from "../views/HackerNews.vue";
+import Home from "../views/Home.vue";
+import PageNotFound from "@/views/PageNotFound.vue";
+import PokeDetail from "../views/PokeDetail.vue";
+import PokeWiki from "../views/PokeWiki.vue";
+import RouterDocu from "../views/RouterDocu.vue";
+import TodoList from "../views/TodoList.vue";
 
 Vue.use(VueRouter);
 
