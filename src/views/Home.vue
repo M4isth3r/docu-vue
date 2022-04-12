@@ -5,7 +5,7 @@
       v-bind:alt="alternativeText"
       src="../assets/logo.png"
     />
-    <HelloWorld msg="Welcome to DocuVue" componentName="HelloWorld" />
+    <HelloWorld :msg="userLogged" componentName="HelloWorld" />
     <MiComponente />
     <VDocuAxios />
   </div>
@@ -16,6 +16,7 @@
 import HelloWorld from "@/components/HelloWorld.vue";
 import MiComponente from "@/components/MiComponente.vue";
 import VDocuAxios from "@/components/VDocuAxios.vue";
+import auth from "@/logic/auth";
 
 export default {
   name: "Home",
@@ -33,5 +34,10 @@ export default {
     alternativeText: "Vue logo",
     myClass: "my-class",
   }),
+  computed: {
+    userLogged() {
+      return `Welcome ${auth.getUserLogged()}`;
+    }
+  }
 };
 </script>

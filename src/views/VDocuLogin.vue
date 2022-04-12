@@ -29,7 +29,11 @@ export default {
     login() {
       auth
         .login(this.email, this.password)
-        .then(() => this.$router.push("/"), () => this.error = true);
+        .then(
+          () => {
+            auth.setUserLogged(this.email );
+            this.$router.push("/");
+          }, () => this.error = true);
     }
   }
 }
