@@ -1,28 +1,35 @@
 <template>
   <div class="login">
-    <h1 class="title">Login in the page</h1>
+    <h1 class="title">Sign in to page</h1>
     <form action class="form" @submit.prevent="login">
       <label class="form-label" for="#email">Email:</label>
       <input v-model="email" class="form-input" type="email" id="email" required placeholder="Email">
       <label class="form-label" for="#password">Password:</label>
       <input v-model="password" class="form-input" type="password" id="password" placeholder="Password">
-      <p v-if="error" class="error">You have typed bad format of email or password.</p>
-      <input class="form-submit" type="submit" value="Login">
+      <p v-if="error" class="error">{{ wrongTypedData }}</p>
+      <input class="form-submit" type="submit" value="Sign in">
     </form>
+    <p class="msg">Don't have an account yet?
+      <router-link to="/register">Register now</router-link>
+    </p>
   </div>
 </template>
 
 <script>
+import auth from "@/logic/auth";
+
 export default {
   data: () => ({
     email: "",
     password: "",
     error: false,
+    wrongTypedData: "Incorrect username or password."
   }),
   methods: {
     login() {
-      console.log(this.email);
-      console.log(this.password);
+      auth
+        .login(this.email, this.password)
+        .then(() => this.$router.push("/"), () => this.error = true);
     }
   }
 }
@@ -78,5 +85,13 @@ export default {
 }
 .form-submit:hover {
     background: #0b9185;
+}
+.error {
+  margin: 1rem 0 0;
+  color: #ff4a96;
+}
+.msg {
+  margin-top: 3rem;
+  text-align: center;
 }
 </style>

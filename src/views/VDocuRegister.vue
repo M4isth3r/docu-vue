@@ -32,7 +32,7 @@
       <p v-if="error" class="error">
         You have typed bad format of email or password.
       </p>
-      <input class="form-submit" type="submit" value="Sign up" />
+      <input class="form-submit" type="submit" value="Register" />
     </form>
   </div>
 </template>
