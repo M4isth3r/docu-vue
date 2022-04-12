@@ -15,6 +15,7 @@
 import VDocuTable from "../components/common/VDocuTable.vue";
 import CustomSpinner from "./common/CustomSpinner.vue";
 import CustomSearcher from "../components/common/CustomSearcher.vue";
+// https://www.svgrepo.com/svg/415304/cactus-furniture-nature-16
 import cactus from "@/assets/cactus.svg";
 
 export default {

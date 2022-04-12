@@ -7,6 +7,7 @@
     />
     <HelloWorld msg="Welcome to DocuVue" componentName="HelloWorld" />
     <MiComponente />
+    <VDocuAxios />
   </div>
 </template>
 
@@ -14,12 +15,14 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import MiComponente from "@/components/MiComponente.vue";
+import VDocuAxios from "@/components/VDocuAxios.vue";
 
 export default {
   name: "Home",
   components: {
     HelloWorld,
     MiComponente,
+    VDocuAxios,
   },
   data: () => ({
     coleccion: [
