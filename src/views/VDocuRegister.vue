@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <h1 class="title">Login in the page</h1>
-    <form action class="form" @submit.prevent="login">
+    <form action class="form" @submit.prevent="register">
       <label class="form-label" for="#email">Email:</label>
       <input
         v-model="email"
@@ -38,6 +38,8 @@
 </template>
 
 <script>
+import auth from "@/logic/auth";
+
 export default {
   data: () => ({
     email: "",
@@ -46,10 +48,10 @@ export default {
     error: false,
   }),
   methods: {
-    login() {
-      console.log(this.email);
-      console.log(this.password);
-      console.log(this.passwordRepeat);
+    register() {
+      auth
+        .register(this.email, this.password, this.passwordRepeat)
+        .then(() => this.$router.push("/"), () => alert("Ups! Somthing was wrong :("));
     },
   },
 };
