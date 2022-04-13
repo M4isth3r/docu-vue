@@ -1,7 +1,7 @@
 <template>
   <div class="v-container">
     <custom-spinner id="spinner"></custom-spinner>
-    <custom-searcher>
+    <custom-searcher @search-value="getData">
       <img :src="cactus.src" :alt="cactus.alt" />
     </custom-searcher>
     <v-docu-table
@@ -29,7 +29,7 @@ export default {
     hackerNewsData: [],
     temporalData: [],
     url: "https://hn.algolia.com/api/v1/search?",
-    search: "covid",
+    search: "vue",
     page: 0,
     hitsPerPage: 20,
     isSpinnerVisible: true,
@@ -38,15 +38,20 @@ export default {
       alt: "cactus",
     },
   }),
-  methods: {},
-  created() {
-    fetch(
+  methods: {
+    getData(valueToSearch) {
+      this.search = valueToSearch;
+      this.searchData();
+    },
+    searchData() {
+      fetch(
       `${this.url}query=${this.search}&page=${this.page}&hitsPerPage=${this.hitsPerPage}`,
       { method: "GET" }
     )
       .then((response) => response.json())
       .then((articles) => {
         console.table(articles.hits);
+        this.hackerNewsData.length = 0;
         articles.hits
           .map((article) => {
             return {
@@ -68,6 +73,10 @@ export default {
         this.$el.querySelector("#spinner").classList.remove("show");
         this.isSpinnerVisible = false;
       });
+    }
+  },
+  created() {
+    this.searchData();
   },
   mounted() {
     console.log("MOUNTED");

@@ -9,12 +9,12 @@
         placeholder="Value to search..."
       />
     </div>
-    <div class="nes-field">
+    <div class="nes-field btn">
       <button class="nes-btn is-primary" type="submit" @click="fireEvent">
         Submit
       </button>
     </div>
-    <div class="nes-field">
+    <div class="nes-field btn">
       <button class="nes-btn is-error" type="reset" @click="rechargeData">
         Reset
       </button>
@@ -50,13 +50,11 @@ export default {
 </script>
 
 <style scoped>
-* {
-  font-family: "Press Start 2P";
-}
 
 #custom-searcher {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .nes-field {
@@ -66,5 +64,20 @@ export default {
 
 :is(input, button) {
   height: 90%;
+}
+
+@media screen and (max-width: 600px) {
+  .nes-field {
+    width: 100%;
+    margin: 0 15px 5px;
+  }
+
+  .nes-field.btn {
+    width: 42%;
+  }
+
+  button {
+    width: 90%;
+  }
 }
 </style>

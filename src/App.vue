@@ -6,20 +6,23 @@
       <router-link to="/todo-list">TodoList</router-link> |
       <router-link :to="{ name: 'RouterDocu' }">RouterDocu</router-link> |
       <router-link to="/poke-wiki">PokeWiki</router-link> |
-      <router-link :to="{ name: 'About' }">About</router-link>
+      <router-link :to="{ name: 'About' }">About</router-link> |
+      <router-link :to="{ name: 'Login' }">Login</router-link> |
+      <router-link :to="{ name: 'Register' }">Register</router-link>
     </div>
     <router-view />
   </div>
 </template>
 
 <script>
+import 'victormono';
 export default {
   name: "App",
   components: {},
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 :host {
   box-sizing: border-box;
   margin: 0;
@@ -27,7 +30,7 @@ export default {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Victor Mono SemiBold', Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
