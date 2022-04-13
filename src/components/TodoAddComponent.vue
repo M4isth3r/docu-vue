@@ -1,24 +1,29 @@
 <template>
   <div class="form">
-    <label class="label" for="task">Nueva tarea: </label>
+    <!-- <label class="label" for="task">Nueva tarea: </label>
     <input type="text" v-model="text" />
-    <button class="button" @click="createTask">Crear tarea</button>
+    <button class="button" @click="createTask">Crear tarea</button> -->
+    <custom-searcher @search-value="createTask">
+      <!-- <img :src="cactus.src" :alt="cactus.alt" /> -->
+    </custom-searcher>
   </div>
 </template>
 
 <script>
+import CustomSearcher from "../components/common/CustomSearcher.vue";
+
 export default {
-  data: () => ({
-    text: "",
-  }),
+  components: {
+    CustomSearcher
+  },
+  data: () => ({}),
   methods: {
-    createTask() {
-      if (this.text.length > 0) {
+    createTask(newTask) {
+      if (newTask.length > 0) {
         let task = {
-          text: this.text,
+          text: newTask,
           completed: false,
         };
-        this.text = "";
         this.$emit("add-new-task", task);
       }
     },
@@ -33,24 +38,12 @@ export default {
   padding: 30px;
   box-shadow: 0px 10px 22px -1px rgba(0, 0, 0, 0.25);
   margin-top: 10px;
-  width: 400px;
+  width: 300px;
   margin: auto;
 }
 
 input {
   margin-right: 5px;
-  padding: 5px;
-}
-
-.button {
-  margin-left: 20px;
-  height: 35px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  background-color: #2ecc71;
-  color: black;
-  cursor: pointer;
   padding: 5px;
 }
 </style>

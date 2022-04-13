@@ -62,7 +62,7 @@ export default {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   border: none;
-  width: 400px;
+  width: 300px;
 }
 
 ul {

@@ -58,7 +58,7 @@ export default {
 }
 
 .nes-field {
-  margin: 0 10px 10px 0;
+  margin: 0 10px;
   padding: 0.5rem 0;
 }
 
@@ -66,14 +66,14 @@ export default {
   height: 90%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 720px) {
   .nes-field {
     width: 100%;
     margin: 0 15px 5px;
   }
 
   .nes-field.btn {
-    width: 42%;
+    width: 40%;
   }
 
   button {

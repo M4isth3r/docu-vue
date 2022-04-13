@@ -1,6 +1,6 @@
 <template>
   <li @click="completeTask(task.text)">
-    {{ task.text }} - [{{ task.completed }}]
+    [{{ task.completed }}] - {{ task.text }}
   </li>
 </template>
 
