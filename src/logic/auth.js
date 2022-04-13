@@ -14,7 +14,8 @@ LOGIN
 
 export default {
   setUserLogged(userLogged) {
-    Cookies.set("userLogged", userLogged);
+    var inOneMinute = new Date(Date.now() + 1 * 60 * 1000);
+    Cookies.set("userLogged", userLogged, { expires: inOneMinute });
   },
   getUserLogged() {
     return Cookies.get("userLogged");

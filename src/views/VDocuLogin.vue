@@ -26,6 +26,11 @@
       Don't have an account yet?
       <router-link to="/register">Register now</router-link>
     </p>
+    <div class="example">
+      <span>Data example becouse we are using for login/register <a href="https://reqres.in/" target="_blank" rel="noopener noreferrer">https://reqres.in/</a></span>
+      <span>"email": "eve.holt@reqres.in"</span>
+      <span>"password": "cityslicka"</span>
+    </div>
   </div>
 </template>
 

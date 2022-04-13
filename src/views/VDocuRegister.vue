@@ -34,6 +34,11 @@
       </p>
       <input class="form-submit" type="submit" value="Register" />
     </form>
+    <div class="example">
+      <span>Data example becouse we are using for login/register <a href="https://reqres.in/" target="_blank" rel="noopener noreferrer">https://reqres.in/</a></span>
+      <span>"email": "eve.holt@reqres.in"</span>
+      <span>"password": "pistol"</span>
+    </div>
   </div>
 </template>
 

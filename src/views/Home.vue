@@ -26,17 +26,12 @@ export default {
     VDocuAxios,
   },
   data: () => ({
-    coleccion: [
-      { name: "Hera", description: "la diosa del Olimpo" },
-      { name: "Hefesto", description: "el dios del fuego y de la metalurgia" },
-      { name: "Afrodita", description: "la diosa del amor y de la belleza" },
-    ],
     alternativeText: "Vue logo",
     myClass: "my-class",
   }),
   computed: {
     userLogged() {
-      return `Welcome ${auth.getUserLogged()}`;
+      return `Welcome ${auth.getUserLogged() || ''}` ;
     }
   }
 };
