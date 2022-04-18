@@ -2,7 +2,8 @@ import Vue from "vue";
 const dayjs = require("dayjs");
 
 /**
- * Documentación FILTERS
+ * # FILTERS
+ * https://es.vuejs.org/v2/guide/filters.html
  * Librería de filtros recomendad: https://github.com/freearhey/vue2-filters
  * Librería para Date: https://github.com/iamkun/dayj
 */

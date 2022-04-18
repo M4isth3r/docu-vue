@@ -1,6 +1,7 @@
 :root {
   --border-color: #000;
   --font-color: #000;
+  --vue-color: #42b983;
 }
 .login {
   padding: 2rem;

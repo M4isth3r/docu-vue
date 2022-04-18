@@ -14,7 +14,7 @@
         @click="openPokemonDetail(pokemon)"
       >
         <p>{{ pokemon.species.name }}</p>
-        <img :src="pokemon.sprites.front_default" :alt="pokemon.species.name" />
+        <img v-lazy="pokemon.sprites.front_default" :alt="pokemon.species.name" />
       </div>
     </div>
   </div>

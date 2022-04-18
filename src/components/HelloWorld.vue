@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div>{{ msg | capitalize({ onlyFirstLetter: true }) }}</div>
+    <div v-color="">{{ msg | capitalize({ onlyFirstLetter: true }) }}</div>
     <div class="time">{{ time || "..." }}</div>
     <div>
       <p>
         Veces que has saludado: {{ greetNumber }} - Saludo * 2 =
         {{ doubleGreetNumber }}
       </p>
-      <button  class="nes-btn is-success" @click="greet">Saludar!</button>
+      <button class="nes-btn" @click="greet">Saludar!</button>
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <p v-if="!condition">{{ miVariable }}</p>
+    <p v-color="'#42b983'" v-if="!condition">{{ miVariable }}</p>
     <p v-else>Esta frase no se va a mostrar</p>
   </div>
 </template>

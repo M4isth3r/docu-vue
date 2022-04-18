@@ -7,6 +7,7 @@
         type="text"
         v-model="valueToSearch"
         placeholder="Value to search..."
+        v-focus
       />
     </div>
     <div class="nes-field btn">
