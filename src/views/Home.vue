@@ -5,7 +5,7 @@
       v-bind:alt="alternativeText"
       src="../assets/logo.png"
     />
-    <HelloWorld :msg="userLogged" componentName="HelloWorld" />
+    <HelloWorld :msg="userLogged" />
     <MiComponente />
     <VDocuAxios />
   </div>
@@ -31,7 +31,7 @@ export default {
   }),
   computed: {
     userLogged() {
-      return `Welcome ${auth.getUserLogged() || ''}` ;
+      return `welcome ${auth.getUserLogged() || ''}` ;
     }
   }
 };

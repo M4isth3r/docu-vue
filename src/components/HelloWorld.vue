@@ -1,26 +1,28 @@
 <template>
   <div>
-    <div>{{ msg }}</div>
-    <button @click="greet(componentName)">Saludar!</button>
+    <div>{{ msg | capitalize({ onlyFirstLetter: true }) }}</div>
+    <div class="time">{{ time || "..." }}</div>
     <div>
       <p>
         Veces que has saludado: {{ greetNumber }} - Saludo * 2 =
         {{ doubleGreetNumber }}
       </p>
+      <button  class="nes-btn is-success" @click="greet">Saludar!</button>
     </div>
   </div>
 </template>
 
 <script>
+const dayjs = require("dayjs");
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
-    componentName: String,
   },
   data: () => ({
     text: String,
     greetNumber: 0,
+    time: "",
   }),
   // Las propiedades computadas tienen caché, es decir,
   // utilizar propiedades computadas es más óptimo porque
@@ -32,13 +34,24 @@ export default {
     },
   },
   methods: {
-    greet(name) {
-      console.log(`Hola mundo desde ${name}`);
+    greet() {
       this.count();
     },
     count() {
       this.greetNumber++;
     },
+    formatDate() {
+      const currentDate = dayjs(Date.now()).format("DD-MM-YYYY h:mm:ss A");
+      this.time = currentDate;
+    },
+    streamingOfTime() {
+      setInterval(() => {
+        this.formatDate();
+      }, 1000);
+    },
+  },
+  created() {
+    this.streamingOfTime();
   },
 };
 </script>
@@ -58,5 +71,11 @@ li {
 }
 a {
   color: #42b983;
+}
+.time {
+  height: 2rem;
+}
+div {
+  margin: 0.5rem;
 }
 </style>
