@@ -7,15 +7,17 @@
         Veces que has saludado: {{ greetNumber }} - Saludo * 2 =
         {{ doubleGreetNumber }}
       </p>
-      <button class="nes-btn" @click="greet">Saludar!</button>
+      <button class="nes-btn" @click="[greet(), clickHandler($event)]">Saludar!</button>
     </div>
   </div>
 </template>
 
 <script>
+import clickMixin from "@/mixins/clickMixin";
 const dayjs = require("dayjs");
 export default {
   name: "HelloWorld",
+  mixins: [clickMixin],
   props: {
     msg: String,
   },

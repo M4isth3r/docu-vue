@@ -2,6 +2,7 @@
 
 # Table of contents
   * [Directives](src/directives/DIRECTIVES.md)
+  * [Mixins](src/mixins/MIXINS.md)
 
 # Commands
 
