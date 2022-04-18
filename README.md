@@ -1,4 +1,9 @@
-# docu-vue
+# Docu-Vue
+
+# Table of contents
+  * [Directives](src/directives/DIRECTIVES.md)
+
+# Commands
 
 ## Install Vue cli vith npm
 ```
