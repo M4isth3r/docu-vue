@@ -11,6 +11,7 @@ import RouterDocu from "../views/RouterDocu.vue";
 import TodoList from "../views/TodoList.vue";
 import VDocuLogin from "../views/VDocuLogin.vue";
 import VDocuRegister from "../views/VDocuRegister.vue";
+import VDocuVeeValidate from "@/views/form-validation-third-library/VDocuVeeValidate.vue";
 
 Vue.use(VueRouter);
 
@@ -29,6 +30,11 @@ const routes = [
     path: "/register",
     name: "Register",
     component: VDocuRegister
+  },
+  {
+    path: "/vee-validate",
+    name: "VeeValidate",
+    component: VDocuVeeValidate
   },
   {
     path: "/about",

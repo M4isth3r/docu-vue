@@ -6,15 +6,15 @@
 
 # Commands
 
-## Install Vue cli vith npm
+### Install Vue cli vith npm
 ```
 npm install -g @vue/cli
 ```
-## Create new app with Vue cli
+### Create new app with Vue cli
 ```
 vue create <name-of-app>
 ```
-## Project setup
+### Project setup
 ```
 npm install
 ```

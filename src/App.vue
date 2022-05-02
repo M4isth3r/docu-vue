@@ -8,7 +8,8 @@
       <router-link to="/poke-wiki">PokeWiki</router-link> |
       <router-link :to="{ name: 'About' }">About</router-link> |
       <router-link :to="{ name: 'Login' }">Login</router-link> |
-      <router-link :to="{ name: 'Register' }">Register</router-link>
+      <router-link :to="{ name: 'Register' }">Register</router-link> |
+      <router-link :to="{ name: 'VeeValidate' }">VeeValidate</router-link>
     </div>
     <router-view />
   </div>

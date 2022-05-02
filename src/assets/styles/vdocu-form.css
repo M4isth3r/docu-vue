@@ -2,6 +2,7 @@
   --border-color: #000;
   --font-color: #000;
   --vue-color: #42b983;
+  --error-color: #ed4337;
 }
 .login {
   padding: 2rem;
@@ -50,7 +51,7 @@
 }
 .error {
   margin: 1rem 0 0;
-  color: #ff4a96;
+  color: var(--error-color);
 }
 .msg {
   margin-top: 3rem;

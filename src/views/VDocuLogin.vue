@@ -17,6 +17,7 @@
         class="form-input"
         type="password"
         id="password"
+        required
         placeholder="Password"
       />
       <p v-if="error" class="error">{{ wrongTypedData }}</p>
